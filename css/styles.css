@@ -433,7 +433,7 @@ body {
   fill: transparent;
 }
 
-.modal-check:checked + .policy-checkbox-label > span {
+.modal-check:checked + .checkbox-label > span {
   background-color: var(--accent-color);
   border: none;
   fill: #ffffff;
