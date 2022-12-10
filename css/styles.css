@@ -333,10 +333,14 @@ body {
 }
 
 .icon-close {
-  fill: red;
+  display: flex;
+  fill: currentColor;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.btn-modal-close:hover {
+.btn-modal-close:hover .icon-close {
   fill: var(--accent-color);
 }
 .modal-order-form {
