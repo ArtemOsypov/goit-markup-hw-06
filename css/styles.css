@@ -387,9 +387,9 @@ body {
 
 .input-icon {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 12px;
-  transform: translateY(50%);
+  transform: translateY(-50%);
 }
 
 .modal-form-input:focus {
