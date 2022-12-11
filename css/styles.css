@@ -240,6 +240,7 @@ body {
   max-width: 696px;
   margin: 0 auto;
   margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -249,18 +250,19 @@ body {
 
 .hero-btn-title {
   height: 50px;
-
   padding: 10px 32px 10px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  align-items: center;
 
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  align-items: center;
+
   text-align: center;
   letter-spacing: 0.06em;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
   color: var(--color-text-hero);
   background-color: var(--accent-color);
   border: none;
@@ -277,13 +279,11 @@ body {
 .hero-backdrop {
   position: fixed;
   top: 0;
-  /* left: 0; */
-
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
   z-index: 10;
-  /* transition: opacity 5000ms ubic-bezier(0.4, 0, 0.2, 1); */
+  background-color: rgba(0, 0, 0, 0.2);
+
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -298,9 +298,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 528px;
-  height: 581px;
+  padding: 40px;
+
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -321,23 +321,19 @@ body {
   height: 30px;
   padding: 0;
 
-  /* background-repeat: no-repeat;
-  background-position: center; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
-  /* fill: red; */
-  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); */
-  /* background-image: url(../images/close.svg); */
 }
 
 .icon-close {
   display: flex;
-  fill: currentColor;
   align-items: center;
   justify-content: center;
   margin: auto;
+
+  fill: currentColor;
 }
 
 .btn-modal-close:hover .icon-close {
@@ -348,11 +344,7 @@ body {
 }
 
 .modal-form-title {
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 12px;
-
+  margin-bottom: 12px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -362,45 +354,32 @@ body {
   color: var(--color-title);
 }
 
-/* .modal-list {
-  display: inline-block;
-  position: relative;
-  width: 448px;
-  height: 342px;
-} */
-
-/* .modal-list-item:not(:last-child) {
-  margin-bottom: 10px;
-} */
-
 .modal-list-label {
-  /* font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400; */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+
   font-size: 12px;
   line-height: 1.166;
   color: var(--text-color);
   text-align: left;
-  margin-left: 40px;
-
-  display: flex;
-  flex-direction: column;
   margin-bottom: 4px;
 }
 
 .form-field {
   position: relative;
-  margin-left: 40px;
-  margin-right: 40px;
   margin-bottom: 10px;
 }
 
 .modal-form-input {
   width: 100%;
   height: 40px;
-  padding-left: 30px;
+  padding-left: 42px;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  font-size: 12px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
@@ -408,9 +387,8 @@ body {
 
 .input-icon {
   position: absolute;
-  margin-left: 12px;
   top: 0;
-  left: 0;
+  left: 12px;
   transform: translateY(50%);
 }
 
@@ -423,42 +401,48 @@ body {
 }
 
 .textarea {
+  display: block;
   width: 100%;
   height: 120px;
   padding-top: 10px;
-  margin-bottom: 20px;
+  padding-left: 16px;
+
+  font-size: 12px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: transparent;
-  font-size: 12px;
+
   line-height: 1.15;
   color: rgba(117, 117, 117, 0.5);
   resize: none;
 }
 
+.textarea:focus {
+  border-color: var(--accent-color);
+}
+
 .checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 14px;
   line-height: 1.71;
   color: var(--text-color);
+}
+
+.checkbox-label > span {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* .checkbox-icon {
-  fill: red
-  background-color: transparent;
-} */
-
-.checkbox-label > span {
   width: 16px;
   height: 15px;
+
   border: 2px solid #212121;
   border-radius: 2px;
   margin-right: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   fill: transparent;
   background-color: transparent;
 }
@@ -467,6 +451,10 @@ body {
   background-color: var(--accent-color);
   border: none;
   fill: #ffffff;
+}
+
+.modal-check:focus + .checkbox-label > span {
+  border-color: var(--accent-color);
 }
 
 .agrrement-link {
@@ -479,16 +467,18 @@ body {
   width: 200px;
   height: 50px;
   margin-top: 30px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
   letter-spacing: 0.06em;
+
   background-color: var(--accent-color);
   color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -534,11 +524,13 @@ body {
 .features-item {
   display: inline-block;
   margin-bottom: 10px;
+
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1.15;
   letter-spacing: 0.03em;
+
   color: var(--color-title);
 }
 .features-text {
@@ -550,10 +542,11 @@ body {
 
 .title {
   margin-bottom: 50px;
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
-  text-align: center;
+
   letter-spacing: 0.03em;
   color: var(--color-title);
 }
@@ -572,12 +565,12 @@ body {
   width: 370px;
   padding-top: 27px;
   padding-bottom: 27px;
+  text-align: center;
+  justify-content: center;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   font-weight: 700;
-  text-align: center;
-  justify-content: center;
 
   color: rgba(255, 255, 255, 1);
   background-color: rgba(47, 48, 58, 0.8);
@@ -608,10 +601,11 @@ body {
 
 .team-member {
   margin-bottom: 10px;
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
+
   color: var(--color-title);
 }
 .team-spec {
@@ -634,12 +628,13 @@ body {
 }
 
 .team-social-link {
+  display: flex;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+
   color: var(--link-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -675,10 +670,11 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(175, 177, 184, 1);
-  border-radius: 4px;
   align-items: center;
   justify-content: center;
+
+  border: 1px solid rgba(175, 177, 184, 1);
+  border-radius: 4px;
   color: var(--link-color);
   transition-property: border;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -704,26 +700,28 @@ body {
 }
 /* FOOTER */
 .footer {
-  background-color: var(--background-color-hero-footer);
+  display: flex;
   margin: 0 auto;
   padding-top: 60px;
   padding-bottom: 60px;
-  display: flex;
+
+  background-color: var(--background-color-hero-footer);
 }
 
 .address {
   font-style: normal;
 }
 .logo-footer {
+  display: inline-block;
   margin-bottom: 20px;
 
-  display: inline-block;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+
   color: var(--color-text-hero);
 }
 
@@ -734,6 +732,7 @@ body {
   font-size: 14px;
   line-height: 1.72;
   letter-spacing: 0.03em;
+
   color: #ffffff;
 }
 
@@ -783,15 +782,13 @@ body {
   font-family: Roboto;
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   line-height: 100%;
   color: #ffffff;
 }
 
 .footer-social {
   display: inline-block;
-  /* width: 206px;
-  height: 80px; */
   margin-left: 70px;
 }
 
@@ -816,10 +813,10 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  /* border-radius: 4px; */
   align-items: center;
   justify-content: center;
+
+  border-radius: 50%;
   color: #ffffff;
   transition-property: background-color;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -838,13 +835,16 @@ body {
 .footer-form-input {
   width: 358px;
   height: 50px;
-  padding-left: 10px;
+  margin-right: 12px;
+  padding-left: 16px;
+
+  font-size: 16px;
+
   background-color: var(--background-color-hero-footer);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   outline: transparent;
-  font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -857,21 +857,21 @@ body {
   display: inline-flex;
   width: 200px;
   height: 50px;
-  color: #ffffff;
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
   padding-top: 10px;
   padding-bottom: 10px;
+  align-items: center;
+  justify-content: center;
 
-  /* font-family: "Roboto";
-  font-style: normal; */
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
   letter-spacing: 0.06em;
-  align-items: center;
-  justify-content: center;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
   border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -892,23 +892,24 @@ body {
 /* Portfolio */
 
 .button-list {
-  list-style-type: none;
   display: flex;
   justify-content: center;
+  list-style-type: none;
   margin: 0 auto;
   margin-bottom: 34px;
   gap: 8px;
 }
 .button-item {
   padding: 6px 22px;
-  /* margin-bottom: 34px; */
   height: 38px;
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
   text-align: center;
   letter-spacing: 0.03em;
+
   color: var(--color-title);
   background-color: F5F4FA;
   border-radius: 4px;
@@ -927,8 +928,8 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-section {
-  list-style-type: none;
   display: flex;
+  list-style-type: none;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
@@ -938,14 +939,7 @@ body {
   flex-basis: calc((100% - 60px) / 3);
 }
 
-/* .porfolio-list {
-  position: relative;
-} */
-
 .portfolio-link {
-  /* position: relative; */
-  /* width: 370px;
-  height: 294px; */
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
